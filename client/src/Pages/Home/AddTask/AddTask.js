@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import toast from "react-hot-toast";
 const AddTask = () => {
     const [user, setUser] = useState({});
 
@@ -18,8 +18,10 @@ const AddTask = () => {
         .then(res => res.json())
         .then(data => {
             if(data.acknowledged){
-                alert('User added successfully');
+                toast.success("Added Task successfully");
                 event.target.reset();
+                //navigate to media page
+                window.location.href = '/media';
             }
         })
     }

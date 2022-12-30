@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import toast from "react-hot-toast";
 const MyTask = () => {
     const users = useLoaderData();
     const [displayUsers, setDisplayUsers] = useState(users);
@@ -18,7 +19,7 @@ const MyTask = () => {
                 .then(data => {
                     // console.log(data)
                     if (data.deletedCount > 0) {
-                        alert('User deleted successfully.');
+                        toast.success("You have been Deleted");
                         const remainingUsers = displayUsers
                             .filter(usr => usr._id !== user._id);
                         setDisplayUsers(remainingUsers);
@@ -42,9 +43,9 @@ const MyTask = () => {
                         <div className='flex justify-center items-center'>
                   <div className="card-actions d-flex justify-center items-center gap-5">
                   <Link to={`/update/${user._id}`}> <button className="btn rounded-none px-8 mt-5">Update</button> </Link>
-                  <button className="btn rounded-none px-8 mt-5"
+                  <button className="btn rounded-none px-5 mt-5"
                             onClick={() => handleDelete(user)}
-                        >X</button>
+                        >< RiDeleteBin6Line/></button>
                       </div>    
                       </div>
                       </div>

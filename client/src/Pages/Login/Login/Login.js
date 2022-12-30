@@ -46,7 +46,7 @@ const Login = () => {
                     });
 
             })
-            .catch(error => console.log(error));
+            .catch(error => toast.error('Something went wrong!'));
     }
 
     return (

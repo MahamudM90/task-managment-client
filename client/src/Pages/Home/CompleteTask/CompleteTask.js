@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-
+import { RiDeleteBin6Line } from 'react-icons/ri';
 const CompleteTask = () => {
     const users = useLoaderData();
     const [displayUsers, setDisplayUsers] = useState(users);
@@ -44,15 +44,20 @@ const CompleteTask = () => {
                   <Link to='/details'> <button className="btn rounded-none px-8 mt-5">Details</button> </Link>
                   <button className="btn rounded-none px-8 mt-5"
                             onClick={() => handleDelete(user)}
-                        >X</button>
+                        ><RiDeleteBin6Line/></button>
+                             <Link to='/mytask'> <button className="btn rounded-none px-5">Not Completed</button></Link>
                       </div>    
                       </div>
                       </div>
                       </div>
                       </div>
-                      <div className='flex gap-4 my-5'>
-                      <Link to='/complete'><button className="btn rounded-none px-5">Complete</button></Link>
-                      <Link to='/mytask'> <button className="btn rounded-none px-8">Not Completed</button></Link>
+                      <div className='py-5'>
+                      <textarea type="text" className="textarea textarea-success" placeholder="Your Comment" name='textarea'></textarea>
+                      <br/>
+                       <div className='py-2'>
+                        <button class="btn rounded-none px-5 ">Comment</button>
+                        </div>
+                 
                       </div>
                       </div>
                   

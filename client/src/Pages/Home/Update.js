@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import toast from "react-hot-toast";
 const Update = () => {
     const storedUser = useLoaderData();
     
@@ -19,7 +19,10 @@ const Update = () => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount > 0){
-                alert('user updated')
+                toast.success("Update Task successfully");
+                event.target.reset();
+                //navigate to home page
+                window.location.href = '/complete';
                 console.log(data);
             }
             

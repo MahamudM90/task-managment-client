@@ -1,31 +1,31 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="footer p-32 bg-black text-white">
         <div>
             
-            <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+            <p>Task-Management Industries Ltd.<br/>Providing reliable tech since 2020</p>
         </div>
         <div>
             <span className="footer-title">Services</span>
-            <a href="/"className="link link-hover">Branding</a>
-            <a href="/"className="link link-hover">Design</a>
-            <a href="/"className="link link-hover">Marketing</a>
-            <a href="/"className="link link-hover">Advertisement</a>
+            <Link to="/"className="link link-hover">View Task</Link>
+            <Link to="/add"className="link link-hover">Add Task</Link>
+            <Link to="/complete"className="link link-hover">Complete Task</Link>
+          
         </div>
         <div>
             <span className="footer-title">Company</span>
-            <a href="/"className="link link-hover">About us</a>
-            <a href="/"className="link link-hover">Contact</a>
-            <a href="/"className="link link-hover">Jobs</a>
-            <a href="/"className="link link-hover">Press kit</a>
+            <Link to="/login"className="link link-hover"> Login </Link>
+            <Link to="/register"className="link link-hover"> Register </Link>
+            <Link to="/login"className="link link-hover">Jobs</Link>
+            
         </div>
         <div>
             <span className="footer-title">Legal</span>
-            <a href="/"className="link link-hover">Terms of use</a>
-            <a href="/"className="link link-hover">Privacy policy</a>
-            <a href="/"className="link link-hover">Cookie policy</a>
+            <Link to="/login"className="link link-hover">Terms of use</Link>
+            <Link to="/login"className="link link-hover">Privacy policy</Link>
+            <Link to="/login"className="link link-hover">Cookie policy</Link>
         </div>
     </footer>
     );
